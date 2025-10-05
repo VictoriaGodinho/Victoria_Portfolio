@@ -69,7 +69,7 @@
          padding: 40px; 
          margin-top: 40px;
          text-align: center;
-         max-width: 900px;
+         max-width: 1100px;
          margin-left: auto;
          margin-right: auto;
          line-height: 1.6;
@@ -104,40 +104,78 @@
          100% { background-position: 0% 50%; }
       }
 
-      /* Buttons */
-      .prototype-button-container {
-         display: flex;
-         justify-content: center;
-         margin: 20px 0;
+      /* Works Grid */
+      .works-grid {
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         gap: 30px;
+         margin-top: 30px;
+         justify-items: center;
       }
 
-      .prototype-button {
-         background: linear-gradient(45deg, #6142f4, #e4507e, #de6c00);
-         background-size: 300% 300%;
-         color: white;
-         font-size: 18px;
+      .works-grid .work-card {
+         width: 100%;
+         max-width: 300px;
+      }
+
+      /* Each project card */
+      .work-card {
+         position: relative;
+         text-align: center;
+         transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .work-card a {
+         display: block;
+         position: relative;
+         overflow: hidden;
+         border-radius: 12px;
+      }
+
+      .work-card img {
+         width: 100%;
+         height: 180px;
+         object-fit: cover;
+         border-radius: 12px;
+         box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+         transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .work-card a:hover img {
+         transform: scale(1.05);
+         box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+      }
+
+      /* Overlay */
+      .work-card .overlay {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: rgba(0, 0, 0, 0.6);
+         color: #fff;
+         font-size: 1em;
          font-weight: bold;
-         text-decoration: none;
-         padding: 15px 30px;
-         border-radius: 50px;
-         transition: transform 0.3s ease;
-         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-         background-position: 0% 50%;
-         animation: gradientMovement 5s ease infinite;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         opacity: 0;
+         transition: opacity 0.3s ease;
+         border-radius: 12px;
+         text-align: center;
+         padding: 10px;
       }
 
-      .prototype-button:hover {
-         transform: translateY(-5px);
+      .work-card a:hover .overlay {
+         opacity: 1;
       }
 
-      .prototype-button:active {
-         transform: translateY(2px);
-      }
-
-      @keyframes gradientMovement {
-         0% { background-position: 0% 50%; }
-         50% { background-position: 100% 50%; }
-         100% { background-position: 0% 50%; }
+      .work-card h3 {
+         margin-top: 12px;
+         font-size: 1.1em;
+         font-weight: bold;
+         color: #fff;
       }
 
       /* Footer */
@@ -187,7 +225,7 @@
            <ul>
                <li><a href="index.html">HOME</a></li>
                <li><a href="about.html">ABOUT</a></li>
-               <li><a href="works.html">MY WORKS</a></li>
+               <li><a href="works.html">WORKS</a></li>
                <li><a href="contact.html">CONTACT</a></li>
            </ul>
        </div>
@@ -196,17 +234,43 @@
        <div class="works-info">
            <h2>MY WORKS</h2>
 
-           <div class="prototype-button-container">
-               <a href="https://victoriagodinho.github.io/Collage_VictoriaGodinho/" 
-                  target="_blank" class="prototype-button">Collage Project (GitHub)</a>
-           </div>
+           <div class="works-grid">
 
-           <div class="prototype-button-container">
-               <a href="unity-projects.html" class="prototype-button">Unity Projects</a>
-           </div>
+              <!-- Unity - Rube Goldberg -->
+              <div class="work-card">
+                 <a href="rube-goldberg.html">
+                    <img src="images/rube-thumbnail.jpg" alt="Rube Goldberg Project">
+                    <div class="overlay">3D Animation</div>
+                 </a>
+                 <h3>Rube Goldberg Machine</h3>
+              </div>
 
-           <div class="prototype-button-container">
-               <a href="p5works.html" class="prototype-button">p5.js Projects</a>
+              <!-- Unity - The Nights We Watched -->
+              <div class="work-card">
+                 <a href="the-night-we-watched.html">
+                    <img src="images/nights-thumbnail.jpg" alt="The Nights We Watched">
+                    <div class="overlay">Immersive Experience</div>
+                 </a>
+                 <h3>The Nights We Watched</h3>
+              </div>
+
+              <!-- Instagram Ads -->
+              <div class="work-card">
+                 <a href="instagram.html">
+                    <img src="images/ads-thumbnail.jpg" alt="Instagram Ads Project">
+                    <div class="overlay">Web Experiment / Critical Design</div>
+                 </a>
+                 <h3>The Hidden Cost of Engagement</h3>
+              </div>
+
+              <!-- p5.js projects -->
+              <div class="work-card">
+                 <a href="journey.html">
+                    <img src="images/p5-thumbnail.jpg" alt="Journey Across Borders">
+                    <div class="overlay">Game Design</div>
+                 </a>
+                 <h3>Journey Across Borders</h3>
+              </div>
            </div>
        </div>
    </div>
