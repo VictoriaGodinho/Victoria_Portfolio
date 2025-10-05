@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Instagram Ads Project - Victoria Godinho</title>
+   <style>
+      body {
+         position: relative;
+         overflow-x: hidden;
+         overflow-y: auto;
+         margin: 0;
+         font-family: 'Inter Variable', sans-serif;
+         background: rgb(0, 0, 0);
+      }
+
+      body, h1, h2, h3, h4, h5, h6, p, li, strong {
+         color: #fff !important;
+      }
+
+      /* Navbar */
+      .navbar {
+         width: 86%;
+         display: flex;
+         margin: auto;
+         padding: 15px 0;
+         align-items: center;
+         justify-content: space-between;
+         z-index: 2;
+      }
+
+      .navbar ul {
+         list-style: none;
+         margin: 0;
+         padding: 0;
+      }
+
+      .navbar ul li {
+         display: inline-block;
+         padding: 10px 16px;
+      }
+
+      .navbar ul li a {
+         font-size: 16px;
+         font-weight: bold;
+         text-decoration: none;
+         color: #6142f4;
+         margin-top: -3%;
+         transition: 0.4s ease;
+      }
+
+      .navbar ul li a:hover {
+         color: #f442bc !important;
+         transform: scale(1.1);
+      }
+
+      .logo {
+         width: 180px;
+         cursor: pointer;
+         margin-left: -6%;
+         margin-top: 1%;
+      }
+
+      /* Works Header */
+      .works-info {
+         text-align: center;
+         max-width: 1000px;
+         margin: 40px auto;
+         background: rgba(0, 0, 0, 0.6);
+         border-radius: 12px;
+         padding: 25px;
+         box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      }
+
+      .works-info h2 {
+         font-size: 2em;
+         margin: 0;
+      }
+
+      /* Video Section */
+      .video-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 40px;
+          margin: 40px auto;
+          max-width: 1000px;
+          text-align: center;
+      }
+      .video-container h3 {
+          margin-bottom: 15px;
+          font-size: 1.3em;
+          color: #e4507e;
+      }
+      .video-box {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+      video {
+          max-width: 90%;
+          max-height: 70vh;
+          box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+          border-radius: 16px;
+      }
+
+      /* Gradient Buttons */
+      .prototype-button-container {
+         display: flex;
+         justify-content: center;
+         margin: 30px 0;
+         gap: 20px;
+      }
+      .prototype-button {
+         background: linear-gradient(45deg, #6142f4, #e4507e, #de6c00);
+         background-size: 300% 300%;
+         background-position: 0% 50%;
+         animation: gradientMovement 5s ease infinite;
+         color: white;
+         font-size: 18px;
+         font-weight: bold;
+         text-decoration: none;
+         padding: 15px 30px;
+         border-radius: 50px;
+         transition: transform 0.3s ease;
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .prototype-button:hover {
+         transform: scale(1.08);
+      }
+      @keyframes gradientMovement {
+         0% { background-position: 0% 50%; }
+         50% { background-position: 100% 50%; }
+         100% { background-position: 0% 50%; }
+      }
+
+      /* Content Section */
+      .content-section {
+          max-width: 900px;
+          margin: 0 auto;
+          padding: 20px;
+          color: #fff;
+          line-height: 1.6;
+          background: rgba(0, 0, 0, 0.6);
+          border-radius: 12px;
+          box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+      }
+      .content-section h2 {
+          margin-top: 40px;
+          margin-bottom: 15px;
+          font-size: 1.8em;
+          color: #ffb900;
+      }
+      .content-section h3 {
+          margin-top: 25px;
+          margin-bottom: 10px;
+          font-size: 1.3em;
+          color: #e4507e;
+      }
+
+      /* Screenshots Gallery */
+      .progress-images {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 40px;
+          margin-top: 25px;
+      }
+      .progress-images figure {
+          text-align: center;
+          width: 90%;
+          max-width: 800px;
+      }
+      .progress-images img {
+          width: 100%;
+          box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+          border-radius: 12px;
+      }
+      .progress-images figcaption {
+          margin-top: 10px;
+          font-size: 1.1em;
+          color: #ddd;
+      }
+
+      /* Footer */
+      footer {
+         background-color: #6142f4;
+         color: white;
+         display: flex;
+         align-items: center;
+         padding: 10px 20px;
+         font-size: 14px;
+         width: 100%;
+         margin-top: 40px;
+         box-sizing: border-box;
+      }
+      footer .left,
+      footer .right {
+         flex: 1;
+      }
+      footer .center {
+         text-align: center;
+      }
+      footer .right {
+         text-align: right;
+      }
+      footer .right a {
+         color: white;
+         margin-left: 15px;
+         text-decoration: none;
+         font-size: 15px;
+         transition: 0.3s;
+      }
+      footer .right a:hover {
+         color: #f442bc;
+      }
+   </style>
+</head>
+<body>
+   <div class="main">
+       <!-- Navbar -->
+       <div class="navbar">
+           <img src="images/logo.png" class="logo">
+           <ul>
+               <li><a href="index.html">HOME</a></li>
+               <li><a href="about.html">ABOUT</a></li>
+               <li><a href="works.html">WORKS</a></li>
+               <li><a href="contact.html">CONTACT</a></li>
+           </ul>
+       </div>
+
+       <!-- Project Title -->
+       <div class="works-info">
+           <h2>“The Hidden Cost of Engagement”</h2>
+       </div>
+
+       <!-- Video Section -->
+
+           <!-- New Video Section -->
+           <div class="video-box">
+               <h3>Project Demo</h3>
+               <video controls>
+                   <source src="videos/ads.MOV" type="video/quicktime">
+                   Your browser does not support the video tag.
+               </video>
+           </div>
+
+           <div class="prototype-button-container">
+               <a href="https://victoriagodinho.github.io/SelfPortrait/" target="_blank" class="prototype-button">▶ View Live Project</a>
+           </div>
+       </div>
+
+       <!-- Description -->
+       <div class="content-section">
+           <h2>Description</h2>
+           <p>
+              The <em>Instagram Ads Project</em> is an interactive web experience that exposes the hidden economy 
+              behind user interactions with Instagram ads. Even the smallest gestures—pausing, scrolling, clicking—
+              are recorded as signals of interest, generating revenue for advertisers and Instagram.  
+              This project simulates how much money flows from these invisible interactions, turning user behavior 
+              into measurable value.
+           </p>
+
+           <h2>Observations</h2>
+           <p>
+             While building the project, I discovered how even unconscious actions on social media platforms are turned into profit. Every scroll, pause, and click becomes measurable data that fuels the ad economy. In my simulation, if a user clicks on an ad, an additional $3.00 is added to the total; if they simply view or hover over it, $0.50 is automatically counted. These numbers are not exact real-world values but symbolic estimates meant to visualize the hidden flow of money behind user engagement.
+<p>The ads featured in the project were taken directly from my own Instagram data download, which made the experience feel more personal and grounded. By using my actual ad interactions, the project connects digital behavior with real traces of data that platforms store and monetize.
+Rather than critiquing or blaming the system, my goal was to spark curiosity and awareness; to help users notice how their attention itself can generate value, even without making a purchase. The experience turns an everyday, invisible process into something tangible and interactive, encouraging reflection on the unseen exchanges that shape our online environments.</p>
+
+           <h2>Screenshots</h2>
+           <div class="progress-images">
+               <figure>
+                   <img src="images/firstpage.jpg" alt="First Page">
+                   <figcaption>First page with ad overload</figcaption>
+               </figure>
+               <figure>
+                   <img src="images/loading.jpg" alt="Loading Screen">
+                   <figcaption>Loading screen with printer animation</figcaption>
+               </figure>
+               <figure>
+                   <img src="images/receipt.jpg" alt="Receipt Screenshot">
+                   <figcaption>Scrolling receipt of ad interactions</figcaption>
+               </figure>
+           </div>
+
+           <div class="prototype-button-container">
+               <a href="works.html" class="prototype-button">← Back to Works</a>
+           </div>
+       </div>
+   </div>
+
+   <!-- Footer -->
+   <footer>
+      <div class="left">VG</div>
+      <div class="center">© 2025 Victoria Godinho. All rights reserved.</div>
+      <div class="right">
+         <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+         <a href="https://github.com" target="_blank">GitHub</a>
+         <a href="mailto:victoriagodinho2005@gmail.com">Email</a>
+      </div>
+   </footer>
+</body>
+</html>
